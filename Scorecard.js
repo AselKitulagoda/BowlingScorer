@@ -38,6 +38,8 @@ Scorecard.prototype.Initframes= function (input_arr) {
         }
     }
     this.frames.push(FinalFrame);
+    console.log("frames"+JSON.stringify(this.frames));
+
 };
 
 Scorecard.prototype.sumAndEvaluateScores = function(){
