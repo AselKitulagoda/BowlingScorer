@@ -11,7 +11,7 @@ Scorecard.prototype.Initframes= function (input_arr) {
         for (var j = 0;j<2;j++) {
             if (input_arr[i][j] !== "/") {
                 if (input_arr[i][j] === "-"){
-                    cur_Frame.ReceiveShot(0);
+                    // cur_Frame.ReceiveShot(0);
                     continue;
                 }
                 (input_arr[i][j] !== "x") ? cur_Frame.ReceiveShot(Number(input_arr[i][j])) :
