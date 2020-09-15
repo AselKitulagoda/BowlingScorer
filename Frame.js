@@ -9,7 +9,7 @@ function Frame() {
 }
 
 Frame.prototype.isSpare = function () {
-    if (this.secondShot != null && this.firstShot !== 10 && ((this.firstShot+this.secondShot) === 10)){
+    if (this.secondShot != null && ((this.firstShot+this.secondShot) === 10)){
         return true;
     }
 };
