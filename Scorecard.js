@@ -62,7 +62,6 @@ Scorecard.prototype.evaluateScores= function () {
       this.evaluateSpares(i);
       this.evaluateStrikes(i);
   }
-  // this.evaluateStrikesAndSparesFrameTen(9);
 };
 
 Scorecard.prototype.evaluateSpares = function (i) {
@@ -81,19 +80,4 @@ Scorecard.prototype.evaluateStrikes = function (i) {
 Scorecard.prototype.evaluateSecondRoll = function (i) {
     return (this.frames[i+1].secondShot || this.frames[i+2].firstShot);
 };
-
-// Scorecard.prototype.evaluateStrikesAndSparesFrameTen = function (i) {
-//   if (this.frames[i].isStrike()){
-//       this.frames[i].score += this.frames[i].secondShot + this.frames[i].thirdShot;
-//   }
-//   if (this.frames[i].secondShot === 10){
-//       this.frames[i].score += this.frames[i].thirdShot;
-//   }
-//   if (this.frames[i].isSpare()){
-//       this.frames[i].score += this.frames[i].thirdShot;
-//   }
-//
-//
-// };
-
 module.exports = Scorecard;
