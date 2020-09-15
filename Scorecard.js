@@ -7,8 +7,8 @@ function Scorecard() {
 
 Scorecard.prototype.Initframes= function (input_arr) {
     for (var i=0;i<9;i++){
+        var cur_Frame = new Frame();
         for (var j = 0;j<2;j++) {
-            var cur_Frame = new Frame();
             if (input_arr[i][j] !== "/") {
                 if (input_arr[i][j] === "-"){
                     cur_Frame.ReceiveShot(0);
