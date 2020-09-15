@@ -1,15 +1,43 @@
-var Frame = require("Frame");
-var FrameTen = require("FrameTen");
+var Frame = require("./Frame");
+var FrameTen = require("./FrameTen");
 
 function Scorecard() {
     this.frames = [];    
 }
 
-Scorecard.prototype.frames= function (element) {
+Scorecard.prototype.Initframes= function (input_arr) {
     for (var i=0;i<9;i++){
-        this.frames.push(new Frame());
+        for (var j = 0;j<2;j++) {
+            var cur_Frame = new Frame();
+            if (input_arr[i][j] !== "/") {
+                if (input_arr[i][j] === "-"){
+                    cur_Frame.ReceiveShot(0);
+                    continue;
+                }
+                (input_arr[i][j] !== "x") ? cur_Frame.ReceiveShot(Number(input_arr[i][j])) :
+                    cur_Frame.ReceiveShot(10);
+            }
+            else {
+                cur_Frame.ReceiveShot((10-cur_Frame.firstShot));
+            }
+
+        }
+
+        this.frames.push(cur_Frame);
     }
-    this.frames.push(new FrameTen());
+    var FinalFrame = new FrameTen();
+    for (var k=0;k<3;k++){
+        if (input_arr[9][k] === 'x'){
+            FinalFrame.receiveShot(10);
+        }
+        else if (input_arr[9][k] === '/'){
+            FinalFrame.receiveShot(10-FinalFrame.firstShot);
+        }
+        else if (input_arr[9][k] === '-'){
+            FinalFrame.receiveShot(0);
+        }
+    }
+    this.frames.push(FinalFrame);
 };
 
 Scorecard.prototype.sumAndEvaluateScores = function(){
@@ -58,3 +86,5 @@ Scorecard.prototype.evaluateStrikesAndSparesFrameTen = function (i) {
 
 
 };
+
+module.exports = Scorecard;

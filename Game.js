@@ -1,6 +1,8 @@
 var fs = require('fs');
 var lines = fs.readFileSync('input.txt', 'utf8').split("\n");
 
+var Scorecard = require('./Scorecard.js');
+
 var result = [];
 for(var i = 0; i < lines.length; i++) {
     //push each line as an array of numbers
@@ -8,4 +10,9 @@ for(var i = 0; i < lines.length; i++) {
     // ^ convert items to integer
 }
 
+var newScore = new Scorecard();
+newScore.Initframes(result);
+console.log(newScore.sumAndEvaluateScores());
+
 console.log(JSON.stringify(result));
+

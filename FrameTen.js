@@ -1,4 +1,4 @@
-var Frame = require("Frame");
+var Frame = require("./Frame");
 
 function FrameTen() {
     this.thirdShot = null;
@@ -39,4 +39,6 @@ FrameTen.prototype.assignShot = function (hitPins) {
     (this.firstShot == null) ? this.firstShot = hitPins : (this.secondShot == null) ? this.secondShot = hitPins
         : this.thirdShot = hitPins;
 
-}
+};
+
+module.exports = FrameTen;

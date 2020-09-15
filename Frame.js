@@ -30,3 +30,5 @@ Frame.prototype.ReceiveShot = function (hitPins) {
     (this.firstShot == null) ? this.firstShot = hitPins : this.secondShot = hitPins;
     this.shotCount++;
 };
+
+module.exports = Frame;
