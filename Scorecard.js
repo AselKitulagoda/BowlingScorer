@@ -27,7 +27,7 @@ Scorecard.prototype.Initframes= function (input_arr) {
     }
     var FinalFrame = new FrameTen();
     console.log(JSON.stringify(input_arr[9]));
-    for (var k=0;k<3;k++){
+    for (var k=0;k<input_arr[9].length;k++){
         if (input_arr[9][k] === 'x'){
             FinalFrame.receiveShots(10);
         }

@@ -11,7 +11,7 @@ FrameTen.prototype.receiveShots = function (hitPins) {
     if ((this.isSpare() || this.isStrike()) && this.shotCount === 3){
         throw new Error("You cannot receive another shot")
     }
-    if (!this.isSpare() && !this.isStrike() && this.shotCount === 2){
+    if ((!this.isSpare() && !this.isStrike()) && this.shotCount === 2){
         throw new Error("You cannot receive another shot")
     }
     this.updateFrameVariables(hitPins);

@@ -9,6 +9,7 @@ for(var i = 0; i < lines.length; i++) {
     result.push(lines[i].trim().split(" "));
     // ^ convert items to integer
 }
+console.log(JSON.stringify(result));
 
 var newScore = new Scorecard();
 newScore.Initframes(result);
