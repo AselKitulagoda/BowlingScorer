@@ -26,15 +26,19 @@ Scorecard.prototype.Initframes= function (input_arr) {
         this.frames.push(cur_Frame);
     }
     var FinalFrame = new FrameTen();
+    console.log(JSON.stringify(input_arr[9]));
     for (var k=0;k<3;k++){
         if (input_arr[9][k] === 'x'){
-            FinalFrame.receiveShot(10);
+            FinalFrame.receiveShots(10);
         }
         else if (input_arr[9][k] === '/'){
-            FinalFrame.receiveShot(10-FinalFrame.firstShot);
+            FinalFrame.receiveShots(10-FinalFrame.firstShot);
         }
         else if (input_arr[9][k] === '-'){
-            FinalFrame.receiveShot(0);
+            FinalFrame.receiveShots(0);
+        }
+        else {
+            FinalFrame.receiveShots(Number(input_arr[9][k]));
         }
     }
     this.frames.push(FinalFrame);
@@ -44,8 +48,10 @@ Scorecard.prototype.Initframes= function (input_arr) {
 
 Scorecard.prototype.sumAndEvaluateScores = function(){
     this.evaluateScores();
+    console.log("after eval frames"+JSON.stringify(this.frames));
     var total = 0;
     for (var i=0;i<=9;i++){
+        console.log(total);
      total += this.frames[i].score;
   }
     return total;
@@ -67,6 +73,7 @@ Scorecard.prototype.evaluateSpares = function (i) {
 
 Scorecard.prototype.evaluateStrikes = function (i) {
     if (this.frames[i].isStrike()){
+        console.log("Frame score" + this.frames[i].score + " First " + this.frames[i+1].firstShot+ " ," + this.evaluateSecondRoll(i))
         this.frames[i].score += (this.frames[i+1].firstShot + this.evaluateSecondRoll(i));
     }
 };

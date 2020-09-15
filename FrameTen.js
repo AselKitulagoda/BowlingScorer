@@ -7,8 +7,8 @@ function FrameTen() {
 
 FrameTen.prototype = new Frame();
 
-FrameTen.prototype.receiveShot = function (hitPins) {
-    if (this.isSpare() || this.isStrike() && this.shotCount === 3){
+FrameTen.prototype.receiveShots = function (hitPins) {
+    if ((this.isSpare() || this.isStrike()) && this.shotCount === 3){
         throw new Error("You cannot receive another shot")
     }
     if (!this.isSpare() && !this.isStrike() && this.shotCount === 2){
