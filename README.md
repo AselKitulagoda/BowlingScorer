@@ -1,5 +1,7 @@
-### Bowling Scorer
-* Bowling Scorer in Javascript
+## Bowling Scorer
+
+### About
+* Bowling Scorer in Javascript.
 * Makes use of Prototyping OOP approach towards tallying bowling scores.
 * Input taken as txt file in frames as follows:
 ```
@@ -19,7 +21,7 @@ x -
 * ```x``` represents a strike. 
 
 ### How to Run
-* Make sure you have NodeJs installed on your machine [here](https://nodejs.org/en/download/)
+* Make sure you have NodeJs installed on your machine [here](https://nodejs.org/en/download/).
 * Change input txt file to preferred input in [Game.js](Game.js).
 * Run command ```node Game.js``` and final bowling score should be printed out.
 
