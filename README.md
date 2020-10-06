@@ -3,6 +3,7 @@
 ### About
 * Bowling Scorer in Javascript.
 * Makes use of Prototyping OOP approach towards tallying bowling scores.
+* Bowling Scoring is calculated as [follows](http://www.fryes4fun.com/Bowling/scoring.htm).
 * Input taken as txt file in frames as follows:
 ```
 8 /
